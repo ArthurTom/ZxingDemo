@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ Copyright (C) 2008 ZXing authors
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ --><!-- setting 设置的界面，使用偏好设置-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 条码类型-->
+    <PreferenceCategory android:title="@string/preferences_scanning_title">
+        <!-- 一维码 商品-->
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preferences_decode_1D_product"
+            android:title="@string/preferences_decode_1D_product_title" />
+        <!-- 一维码 工业-->
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preferences_decode_1D_industrial"
+            android:title="@string/preferences_decode_1D_industrial_title" />
+        <!-- 二维码-->
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preferences_decode_QR"
+            android:title="@string/preferences_decode_QR_title" />
+        <!-- Data matrix-->
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preferences_decode_Data_Matrix"
+            android:title="@string/preferences_decode_Data_Matrix_title" />
+        <!-- Aztec-->
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="preferences_decode_Aztec"
+            android:title="@string/preferences_decode_Aztec_title" />
+        <!--pd417-->
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="preferences_decode_PDF417"
+            android:title="@string/preferences_decode_PDF417_title" />
+    </PreferenceCategory>
+    <!-- 扫描成功-->
+    <PreferenceCategory android:title="@string/preferences_actions_title">
+        <!-- 播放提示音-->
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preferences_play_beep"
+            android:title="@string/preferences_play_beep_title" />
+        <!-- 震动-->
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="preferences_vibrate"
+            android:title="@string/preferences_vibrate_title" />
+        <!--复制到粘贴板-->
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preferences_copy_to_clipboard"
+            android:title="@string/preferences_copy_to_clipboard_title" />
+        <!-- 自动打开网页-->
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="preferences_auto_open_web"
+            android:title="@string/preferences_auto_open_web_title" />
+        <!--保存重复记录-->
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="preferences_remember_duplicates"
+            android:summary="@string/preferences_remember_duplicates_summary"
+            android:title="@string/preferences_remember_duplicates_title" />
+        <!--存入历史记录-->
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preferences_history"
+            android:summary="@string/preferences_history_summary"
+            android:title="@string/preferences_history_title" />
+        <!-- 检索更多的内容-->
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preferences_supplemental"
+            android:summary="@string/preferences_supplemental_summary"
+            android:title="@string/preferences_supplemental_title" />
+    </PreferenceCategory>
+    <!-- 扫描设置-->
+    <PreferenceCategory android:title="@string/preferences_general_title">
+        <!-- 闪光灯-->
+        <ListPreference
+            android:defaultValue="OFF"
+            android:entries="@array/preferences_front_light_options"
+            android:entryValues="@array/preferences_front_light_values"
+            android:key="preferences_front_light_mode"
+            android:summary="@string/preferences_front_light_summary"
+            android:title="@string/preferences_front_light_title" />
+        <!-- 自动对焦-->
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preferences_auto_focus"
+            android:title="@string/preferences_auto_focus_title" />
+        <!-- 反色-->
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="preferences_invert_scan"
+            android:summary="@string/preferences_invert_scan_summary"
+            android:title="@string/preferences_invert_scan_title" />
+        <!--批量扫描模式-->
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="preferences_bulk_mode"
+            android:summary="@string/preferences_bulk_mode_summary"
+            android:title="@string/preferences_bulk_mode_title" />
+        <!--不自动旋转-->
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preferences_orientation"
+            android:title="@string/preferences_orientation_title" />
+    </PreferenceCategory>
+    <!-- 搜索设置-->
+    <PreferenceCategory android:title="@string/preferences_result_title">
+        <!-- 自定义搜索网址-->
+        <EditTextPreference
+            android:key="preferences_custom_product_search"
+            android:summary="@string/preferences_custom_product_search_summary"
+            android:title="@string/preferences_custom_product_search_title" />
+        <!--搜索引擎国别-->
+        <ListPreference
+            android:defaultValue="-"
+            android:entries="@array/country_codes"
+            android:entryValues="@array/country_codes"
+            android:key="preferences_search_country"
+            android:title="@string/preferences_search_country" />
+    </PreferenceCategory>
+    <!-- 设备适配-->
+    <PreferenceCategory android:title="@string/preferences_device_bug_workarounds_title">
+        <!-- 不持续对焦-->
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preferences_invert_scan"
+            android:summary="@string/preferences_disable_continuous_focus_summary"
+            android:title="@string/preferences_disable_continuous_focus_title" />
+        <!-- 不曝光-->
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preferences_disable_exposure"
+            android:title="@string/preferences_disable_exposure_title" />
+        <!-- 不适用距离测量-->
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preferences_disable_metering"
+            android:title="@string/preferences_disable_metering_title" />
+        <!-- 不进行条形码场景匹配-->
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preferences_disable_barcode_scene_mode"
+            android:title="@string/preferences_disable_barcode_scene_mode_title" />
+    </PreferenceCategory>
+</PreferenceScreen>
